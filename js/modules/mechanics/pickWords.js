@@ -14,33 +14,52 @@ export default async function pickWords() {
 			document.querySelector(".lds-roller").remove();
 		}
 	}
-	let words = await fetch("assets/wordlist.txt").then(res => {
+	/*let words = await fetch("assets/wordlist.txt").then(res => {
 		//console.log(res)
 		return res.ok ? res.text() : res;
 	})
 	words = words.split(/\n+/)
 	let random = Math.floor(Math.random() * words.length);
-	const word = words[random];
-	console.log(word);
-	console.log(`https://synoniemen.net/alex/alexandria-popinto-2011/v2/alexandria-v2-display.php?w=${word}&sl=nl&tl1=nl&tl2=nl&dl=en&sww=708&sdh=100000&sbh=0`)
-	let synonymHtml = await fetch(`https://thingproxy.freeboard.io/fetch/https://synoniemen.net/alex/alexandria-popinto-2011/v2/alexandria-v2-display.php?w=${word}&sl=nl&tl1=nl&tl2=nl&dl=en&sww=708&sdh=100000&sbh=0`).then(res => {
-		//console.log(res);
-		return res.ok ? res.text() : console.log(res);
-	})
-	const parser = new DOMParser();
+	const word = words[random];*/
 
-	synonymHtml = parser.parseFromString(synonymHtml, "text/html");
+	let allWords = await fetch("assets/words.json").then(res => res.ok ? res.json() : console.log(res));
+	allWords = allWords.words;
+	let random = Math.floor(Math.random() * allWords.length);
+	const words = allWords[random];
+
+	localStorage.setItem("words", JSON.stringify(words))
+	foundSynonym = true;
+	document.querySelector(".lds-roller").remove();
+
+	/*let randomWord = await fetch("http://random-word-api.herokuapp.com/word?number=1").then(res => res.ok ? res.json() : console.log(res));
+	randomWord = randomWord[0];
+	console.log(randomWord)
+	let synonym;
 	try {
-		const synonym = await synonymHtml.querySelector(".synonyms .wording").innerText;
-		console.log(await synonym);
-		localStorage.setItem("words", JSON.stringify({word, synonym}))
-		console.log("synoniem is gevonden");
+		synonym = await fetch(`https://api.wordassociations.net/associations/v1.0/json/search?apikey=9fe2d986-91f7-4786-9476-2b89fccda309&text=${randomWord}&lang=en`).then(res => res.ok ? res.json() : console.log(res));
+		synonym = synonym.response[0].items[0].item;
+		console.log(synonym)
+	} catch (e) {
+		console.log(e);
+		//pickWords();
+	}
+
+	let translatedResult = await fetch(`https://api.mymemory.translated.net/get?q=${randomWord}&langpair=en|nl`).then(res => res.ok ? res.json() : console.log(res));
+	let translatedWord = translatedResult.matches[0].translation;
+	console.log(translatedWord);
+
+	let translatedSynResult = await fetch(`https://api.mymemory.translated.net/get?q=${synonym}&langpair=en|nl`).then(res => res.ok ? res.json() : console.log(res));
+	let translatedSynonym = translatedSynResult.matches[0].translation;
+	console.log(translatedSynonym)
+
+	try {
+		localStorage.setItem("words", JSON.stringify({word: translatedWord, synonym: translatedSynonym}))
 		foundSynonym = true;
 		document.querySelector(".lds-roller").remove();
 	} catch (e) {
 		console.log("synoniem is nog niet gevonden")
 		pickWords();
-	}
+	}*/
 	//const data = await fetch("https://random-words-api.vercel.app/word").then(res => res.ok ? res.json() : console.error(res));
 	//console.log(data);
 }
