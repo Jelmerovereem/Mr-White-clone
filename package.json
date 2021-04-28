@@ -1,0 +1,24 @@
+{
+  "name": "mr-white-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url https://jelmerovereem.github.io/Mr-White-clone/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jelmerovereem/Mr-White-clone.git"
+  },
+  "author": "Jelmer Overeem <jelmer_overeem@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jelmerovereem/Mr-White-clone/issues"
+  },
+  "homepage": "https://github.com/Jelmerovereem/Mr-White-clone#readme",
+  "dependencies": {
+    "parcel": "^2.0.0-beta.2"
+  }
+}
