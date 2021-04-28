@@ -14,7 +14,7 @@ export default async function pickWords() {
 			document.querySelector(".lds-roller").remove();
 		}
 	}
-	let words = await fetch("../../../../assets/wordlist.txt").then(res => {
+	let words = await fetch("./../../../assets/wordlist.txt").then(res => {
 		//console.log(res)
 		return res.ok ? res.text() : res;
 	})
