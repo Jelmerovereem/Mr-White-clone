@@ -1,6 +1,6 @@
 function getRolesAmount(userCount, ratios) {
 	const totalRatio = ratios.reduce((a, b) => a + b, 0);
-	const result = [];
+	let result = [];
 	let amountLeft = userCount;
 
 	for (const ratio of ratios) {
@@ -10,7 +10,10 @@ function getRolesAmount(userCount, ratios) {
 		result.push(userAmount);
 		amountLeft -= userAmount;
 	}
-
+	if (userCount === 7) {
+		result = [3, 3, 1]
+	}
+	console.log(result)
 	return result;
 }
 

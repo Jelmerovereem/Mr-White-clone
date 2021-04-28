@@ -1,0 +1,16 @@
+{
+	"words": [
+		{
+			"word": "Hond",
+			"synonym": "Kat"
+		},
+		{
+			"word": "Stoel",
+			"synonym": "Tafel"
+		},
+		{
+			"word": "Microfoon",
+			"synonym": "Speaker"
+		}
+	]
+}
