@@ -1,0 +1,29 @@
+.playerCardsContainer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.playerCard {
+	background: lightblue;
+	padding: 40px;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.playerCard:hover {
+	//background: blue;
+	//color: white;
+	opacity: .5;
+}
+
+.burger {
+	background: green;
+}
+
+.undercover {
+	background: lightblue;
+}
+
+.mr-white {
+	background: red;
+}

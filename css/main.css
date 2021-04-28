@@ -1,0 +1,13 @@
+@import url("./addPlayers.css");
+@import url("./playerCards.css");
+@import url("./alertTurn.css");
+@import url("./loader.css");
+
+body {
+	font-family: poppins;
+	margin: 0;
+}
+
+main {
+	margin: 8px;
+}

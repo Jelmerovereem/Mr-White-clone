@@ -1,0 +1,20 @@
+.alertTurn {
+	position: absolute;
+	top: -200px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	background: darkblue;
+	color: white;
+	animation: slideIn .5s forwards;
+}
+
+@keyframes slideIn {
+	from {
+		top: -200px;
+	}
+	to {
+		top: 0;
+	}
+}
