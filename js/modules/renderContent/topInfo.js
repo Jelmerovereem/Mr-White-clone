@@ -2,11 +2,11 @@ import createElement from "../helpers/createElement.js";
 
 const main = document.querySelector("main");
 
-export default function alertTurn(user) {
+export default function topInfo(textContent) {
 	const elOptions = {
 		type: "div",
-		textContent: user.name,
-		classes: "alertTurn"
+		textContent,
+		classes: "topInfo"
 	};
 	const alertEl = createElement(elOptions);
 	main.append(alertEl);

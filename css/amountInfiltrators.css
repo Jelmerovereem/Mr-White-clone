@@ -1,0 +1,32 @@
+.amountInfiltratorsContainer {
+	text-align: center;
+}
+
+.amountInfiltratorsViz {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #b0b0b0;
+	padding: 5px 20px;
+	border-radius: 15px;
+	width: fit-content;
+	margin: auto;
+}
+
+.amountInfiltratorSub {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.amountInfiltratorsViz svg {
+	height: 35px;
+	width: auto;
+	margin-right: 5px;
+}
+
+.amountMrWhite {
+	color: white;
+}

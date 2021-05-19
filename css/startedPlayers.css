@@ -1,0 +1,30 @@
+.startedPlayersContainer {
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	width: fit-content;
+}
+
+.playerCardContainer {
+	margin: 10px;
+}
+
+.playerAvatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	width: 80px;
+	height: 80px;
+	font-size: 24px;
+	background: blue;
+	border-radius: 50%;
+	color: white;
+}
+
+.playerNameBar {
+	text-align: center;
+	background: #d3d3d37d;
+	padding: 5px 10px;
+	border-radius: 5px;
+}

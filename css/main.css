@@ -1,7 +1,10 @@
 @import url("./addPlayers.css");
 @import url("./playerCards.css");
-@import url("./alertTurn.css");
+@import url("./topInfo.css");
 @import url("./loader.css");
+@import url("./alertPopup.css");
+@import url("./amountInfiltrators.css");
+@import url("./startedPlayers.css");
 
 body {
 	font-family: poppins;
@@ -10,4 +13,8 @@ body {
 
 main {
 	margin: 8px;
+}
+
+h1 {
+	margin-top: 25%;
 }
