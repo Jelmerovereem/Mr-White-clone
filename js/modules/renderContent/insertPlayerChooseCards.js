@@ -6,7 +6,7 @@ import eliminatePlayer from "../mechanics/eliminatePlayer.js";
 const main = document.querySelector("main");
 
 export default function insertPlayerChooseCards(firstPlayer) {
-	topInfo(`We starten met ${firstPlayer}. Iedereen beschrijft zijn woord. Daarna overleg, stem en kies je de geëlimineerd speler.`);
+	topInfo(`We starten met ${firstPlayer}. Iedereen beschrijft zijn woord. Daarna overleg, stem en kies je de geëlimineerde speler.`);
 	insertAmountInfiltrators();
 
 	const players = JSON.parse(localStorage.getItem("players"));

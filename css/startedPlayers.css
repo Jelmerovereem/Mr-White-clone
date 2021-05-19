@@ -22,6 +22,14 @@
 	color: white;
 }
 
+.playerCardContainer:nth-child(2n) .playerAvatar {
+	background: red;
+}
+
+.playerCardContainer:nth-child(3n) .playerAvatar {
+	background: green;
+}
+
 .playerNameBar {
 	text-align: center;
 	background: #d3d3d37d;

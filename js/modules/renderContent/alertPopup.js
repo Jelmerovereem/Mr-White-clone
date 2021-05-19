@@ -3,7 +3,7 @@ import removeElements from "../helpers/removeElements.js";
 
 const main = document.querySelector("main");
 
-export default function alertPopup({title, subtitle, innerHTML, actionButtonText}) {
+export default function alertPopup({title, subtitle, innerHTML, actionButtonText, actionButtonCallback}) {
 	const outerModal = createElement({type: "div", classes: "alertModal"});
 
 	const innerModal = createElement({type: "div", classes: "innerModal"});
@@ -19,7 +19,12 @@ export default function alertPopup({title, subtitle, innerHTML, actionButtonText
 	}
 
 	if (actionButtonText) {
-		const buttonModal = createElement({type: "a", classes: "modalButton", textContent: actionButtonText, eventListeners: {event: "click", callback: closeAlertPopup}});
+		let buttonModal;
+		if (actionButtonCallback && typeof actionButtonCallback === "function") {
+			buttonModal = createElement({type: "a", classes: "modalButton", textContent: actionButtonText, eventListeners: [{event: "click", callback: closeAlertPopup}, {event: "click", callback: actionButtonCallback}]});
+		} else {
+			buttonModal = createElement({type: "a", classes: "modalButton", textContent: actionButtonText, eventListeners: {event: "click", callback: closeAlertPopup}});
+		}
 		innerModal.append(buttonModal);
 	}
 
