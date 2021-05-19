@@ -3,6 +3,7 @@
 	flex-wrap: wrap;
 	margin: auto;
 	width: fit-content;
+	justify-content: center;
 }
 
 .playerCardContainer {
